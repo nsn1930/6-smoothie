@@ -1,0 +1,14 @@
+@import './base/reset.css';
+@import './components/font-awesome.min.css';
+@import './components/button.css';
+
+.container {
+    display: flex;
+    width: 800px;
+    margin-left: calc(50% - 400px);
+    background-color: yellow;
+}
+
+.container + .container {
+    margin-top: 20px;
+}
