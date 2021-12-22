@@ -22,21 +22,24 @@ body {
     align-items: center;
     gap: 50px;
     width: 100%;
+    padding: 0 20px;
 }
-
-.container > *:first-child{
-    margin-right: auto;
+main.container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: calc(100% - 80px);
 }
 
 .logo {
     max-height: 40px;
+    margin-right: auto;
 }
 
 .menu {
-    display: flex;
+    display: none;
     gap: 20px;
 }
-
 .menu > a {
     color: #000;
     text-decoration: none;
@@ -46,31 +49,21 @@ body {
     text-decoration: underline;
 }
 
-.icons{
-    display: flex;
-    gap: 20px
-}
-
-.icons > a {
-    color: #000;
-    text-decoration: none;
-}   
-.icons > a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
+.hamburger {
+    font-size: 2em;
 }
 
 .gallery {
-    width: 60%;
     padding: 0 0.7em;
-    position: relative;
     font-size: 40px;
+    position: relative;
 }
-
-.gallery > img {
+.gallery > picture {
     width: 100%;
 }
-
+.gallery > picture > img {
+    width: 100%;
+}
 .gallery > .fa {
     position: absolute;
     top: 50%;
@@ -83,59 +76,52 @@ body {
     background-color: var(--primary-color);
     border-radius: 50%;
 }
-
 .gallery > .fa.fa-angle-left {
     left: 0;
     padding-right: 0.17em;
-    /* transform: translateX(-10%); */
 }
 .gallery > .fa.fa-angle-right {
     right: 0;
     padding-left: 0.17em;
-    /* transform: translateX(10%); */
 }
 
 .text {
-    width: 40%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (min-width: 480px) {
     .container {
-        width: 360px;
+        width: 440px;
     }
 }
+
 @media (min-width: 780px) {
     .container {
         width: 660px;
     }
+    .menu {
+        display: flex;
+    }
+    .hamburger {
+        display: none;
+    }
+
+    main.container {
+        flex-direction: row;
+    }
+    .gallery {
+        width: 60%;
+    }
+    .text {
+        width: 40%;
+    }
 }
+
 @media (min-width: 1000px) {
     .container {
         width: 900px;
     }
 }
+
 @media (min-width: 1200px) {
     .container {
         width: 1100px;
